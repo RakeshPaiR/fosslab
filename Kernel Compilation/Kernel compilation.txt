@@ -1,0 +1,36 @@
+wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.16.tar.xz
+
+tar xvJf linux-4.16.tar.xz
+
+sudo apt-get install libncurses5-dev libncursesw5-dev
+
+cd linux-4.16
+
+sudo apt-get install bison
+
+sudo apt-get install flex
+
+sudo make menuconfig
+
+sudo make localmodconfig
+
+sudo make clean
+
+sudo make nconfig
+
+sudo apt-get install build-essential gcc libncurses5-dev libssl-dev
+
+sudo apt install libelf-dev
+
+make -j$(nproc --all)
+
+sudo make modules_install
+
+sudo make install
+
+sudo nano /etc/default/grub
+
+Place a # sign in front of the GRUB_HIDDEN_TIMEOUT and GRUB_HIDDEN_TIMEOUT_QUIET lines
+Afterwards, save these changes by running this command:
+
+	sudo grub-mkconfig -o /boot/grub/grub.cfg
