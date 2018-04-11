@@ -1,8 +1,0 @@
-echo -e "OS:`uname -o`"
-echo -e "`lsb_release -d -r`"
-echo -e "Kernel: `uname -s -v`"
-echo -e "Shells: `cat /etc/shells`"
-echo -e "CPU Info:\n`cat /proc/cpuinfo`"
-echo -e "Memory Info:\n`cat /proc/meminfo`"
-echo -e "Hard Disk info:\n `sudo hdparm -I /dev/sda`"
-echo -e "File System (Mounted): `cat /proc/mounts`"
